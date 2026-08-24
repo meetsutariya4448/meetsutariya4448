@@ -78,26 +78,27 @@ FitForge pairs a React client with a FastAPI/PostgreSQL backend for JWT-authenti
 
 ## 03 / ENGINEERING TOOLKIT
 
-| Layer | Technologies demonstrated in projects |
-|---|---|
-| **Languages** | Python, Go, JavaScript, SQL |
-| **Backend** | FastAPI, SQLAlchemy, Celery, Go `net/http`, REST APIs |
-| **AI / Data** | pgvector, sentence-transformers, scikit-learn, RAG, KMeans |
-| **Datastores** | PostgreSQL, Redis |
-| **Delivery / Ops** | Docker Compose, GitHub Actions, Alembic, Prometheus, Vercel, Render |
-| **Product UI** | React, Tailwind CSS, Chart.js, Recharts |
+<p align="center">
+  <img src="./assets/toolkit-panel.svg" width="100%" alt="Verified engineering toolkit: Python, Go, FastAPI, PostgreSQL, pgvector, Celery, Redis, Docker, React, and supporting technologies" />
+</p>
 
 ---
 
 ## 04 / ENGINEERING EVIDENCE
 
-| System | Evidence in the repository |
-|---|---|
-| **TalentScope** | [Passing CI with 54 tests](https://github.com/meetsutariya4448/talentscope/actions/runs/30116435731); [600-sample search benchmark](https://github.com/meetsutariya4448/talentscope/blob/main/evals/benchmark.json); deterministic clustering regression coverage |
-| **Portcullis** | [Sourced scanner corpus and methodology](https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/corpus/README.md); [precision/recall/cost report](https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md); [gateway overhead benchmark](https://github.com/meetsutariya4448/portcullis/blob/main/bench/results.md) |
-| **FitForge** | [Live application](https://fitforge-six.vercel.app); [retrieval and generation evaluation](https://github.com/meetsutariya4448/fitforge/blob/main/backend/eval/results.md); explicit notes on optimistic labels, threshold calibration, and judge resolution |
+<p align="center">
+  <img src="./assets/evidence-panel.svg" width="100%" alt="Verified GitHub activity, public language composition, and project-specific engineering evidence" />
+</p>
 
-No contribution counters or generic stats panels here—the project evidence is the stronger signal.
+<p align="center">
+  <a href="https://github.com/meetsutariya4448/talentscope/actions/runs/30116435731"><strong>TalentScope CI</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md"><strong>Portcullis evaluation</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/meetsutariya4448/fitforge/blob/main/backend/eval/results.md"><strong>FitForge RAG evaluation</strong></a>
+</p>
+
+Activity provides context; project-specific tests, evaluations, and benchmarks remain the stronger signal.
 
 ---
 
