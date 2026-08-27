@@ -29,8 +29,8 @@
       <text x="48" y="271" fill="#dce5ec" font-weight="650">Data plane</text>
       <text x="194" y="271" fill="#c4d0da">PostgreSQL · Redis · Alembic · HNSW / GIN</text>
 
-      <text x="48" y="313" fill="#dce5ec" font-weight="650">Delivery</text>
-      <text x="194" y="313" fill="#c4d0da">Docker Compose · GitHub Actions · Prometheus · Vercel</text>
+      <text x="48" y="313" fill="#dce5ec" font-weight="650">Platform</text>
+      <text x="194" y="313" fill="#c4d0da">Docker Compose · GitHub Actions · Prometheus · Vercel / Render</text>
 
       <text x="48" y="355" fill="#dce5ec" font-weight="650">Product UI</text>
       <text x="194" y="355" fill="#c4d0da">React · Tailwind CSS · Chart.js · Recharts</text>

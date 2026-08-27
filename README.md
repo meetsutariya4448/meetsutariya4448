@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-hero.svg" width="100%" alt="Meet Sutariya — Backend Engineering, Data Systems, and Applied AI" />
+  <img src="./assets/profile-hero.svg" width="100%" alt="Meet Sutariya — AI/ML, platform and cloud, and general software engineering" />
 </p>
 
 <p align="center">
@@ -16,20 +16,20 @@
 
 ## 01 / ENGINEERING PROFILE
 
-I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My repositories center on backend services, data movement, retrieval systems, and the engineering work required to turn model output into a usable product.
+I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My repositories sit at the intersection of AI/ML software, platform and backend systems, and product engineering: retrieval pipelines, asynchronous workers, protocol gateways, APIs, databases, and deployed interfaces.
 
-I tend to work across the full path: ingest and normalize data, design the database and API boundary, add retrieval or ML where it earns its place, then test and measure the behavior. I am looking for 2027 software, backend, AI/ML, and data engineering internships where that systems-and-product range is useful.
+I tend to work across the full path: ingest and normalize data, design the database and API boundary, add retrieval or ML where it earns its place, then test and measure the behavior. I am looking for 2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships where that systems-to-product range is useful.
 
 <table>
   <tr>
-    <th align="left">WHAT I BUILD</th>
-    <th align="left">HOW I ENGINEER</th>
-    <th align="left">WHAT I AM LOOKING FOR</th>
+    <th align="left">AI / ML SOFTWARE</th>
+    <th align="left">PLATFORM / CLOUD</th>
+    <th align="left">GENERAL SOFTWARE</th>
   </tr>
   <tr>
-    <td>API-backed products, ingestion pipelines, retrieval systems, protocol gateways</td>
-    <td>Relational models, scheduled jobs, tests and CI, evals, benchmarks, containers</td>
-    <td>2027 SWE, backend, applied AI/ML, or data engineering internships</td>
+    <td>Retrieval, embeddings, clustering, RAG, and evaluation harnesses</td>
+    <td>APIs, gateways, workers, data stores, containers, CI, metrics, and deployment</td>
+    <td>Authentication, relational models, frontend workflows, and shipped products</td>
   </tr>
 </table>
 
@@ -45,6 +45,8 @@ Celery workers ingest postings from Greenhouse, Lever, and Adzuna, normalize and
 
 `Python · FastAPI · PostgreSQL · pgvector · Celery · Redis · scikit-learn · Docker`
 
+**Role signal:** Platform/cloud SWE · backend engineering · data systems · applied AI/ML
+
 **Engineering signal:** 1,530-posting measured corpus · hybrid search p95 **39.2 ms** across 600 local samples · **54 tests passing** in GitHub Actions.  
 [Repository →](https://github.com/meetsutariya4448/talentscope) · [CI →](https://github.com/meetsutariya4448/talentscope/actions/runs/30116435731) · [Benchmark →](https://github.com/meetsutariya4448/talentscope/blob/main/evals/benchmark.json)
 
@@ -58,6 +60,8 @@ The Go data plane validates MCP headers against JSON-RPC bodies, routes namespac
 
 `Go · Python · net/http · Prometheus · sentence-transformers · pgvector · Docker`
 
+**Role signal:** Platform SWE · backend engineering · AI infrastructure · security engineering
+
 **Engineering signal:** sourced 139-row scanner corpus · cascade F1 **0.973** under leave-one-out evaluation, with the stricter family-holdout limitation reported alongside it · measured native gateway p50 overhead **+1.30 ms** on the documented local benchmark. The scanner is not yet wired into live gateway enforcement.  
 [Repository →](https://github.com/meetsutariya4448/portcullis) · [Architecture →](https://github.com/meetsutariya4448/portcullis/blob/main/ARCHITECTURE.md) · [Evaluation →](https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md)
 
@@ -70,6 +74,8 @@ The Go data plane validates MCP headers against JSON-RPC bodies, routes namespac
 FitForge pairs a React client with a FastAPI/PostgreSQL backend for JWT-authenticated plan generation, workout-session logging, personal-record updates, and progress visualization. Its planning path retrieves fitness guidance with sparse + dense search and cross-encoder reranking before grounded generation through Groq.
 
 `Python · FastAPI · PostgreSQL · React · Recharts · sentence-transformers · Groq · Docker`
+
+**Role signal:** General SWE · AI/ML SWE · full-stack product engineering
 
 **Engineering signal:** working public deployment · Alembic-managed relational model · 30-query retrieval ablation where hybrid search reached **R@5 0.900**, with dataset bias and generation-judge limits documented in the repository.  
 [Live demo →](https://fitforge-six.vercel.app) · [Repository →](https://github.com/meetsutariya4448/fitforge) · [RAG evaluation →](https://github.com/meetsutariya4448/fitforge/blob/main/backend/eval/results.md)
@@ -112,7 +118,7 @@ Activity provides context; project-specific tests, evaluations, and benchmarks r
 
 ## 06 / CONTACT
 
-If the work involves APIs, data movement, retrieval, or the path from model output to a reliable product, I would like to hear about it. I am open to relevant **2027 software, backend, AI/ML, and data engineering internships**.
+If the work involves APIs, data movement, retrieval, platform services, or the path from model output to a reliable product, I would like to hear about it. I am open to relevant **2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships**.
 
 <p align="center">
   <a href="https://github.com/meetsutariya4448"><strong>GitHub</strong></a>
