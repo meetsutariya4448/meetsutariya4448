@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/profile-hero.svg" width="100%" alt="Meet Sutariya — AI/ML, platform and cloud, and general software engineering" />
+  <img src="./assets/profile-hero.svg" width="100%" alt="Meet Sutariya — distributed systems, platform engineering, and applied AI" />
 </p>
 
 <p align="center">
@@ -9,27 +9,27 @@
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="mailto:meetsutariya5930@gmail.com"><strong>Email</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://fitforge-six.vercel.app"><strong>Live build</strong></a>
+  <a href="https://fitforge-six.vercel.app"><strong>Live product</strong></a>
 </p>
 
 ---
 
 ## 01 / ENGINEERING PROFILE
 
-I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My repositories sit at the intersection of AI/ML software, platform and backend systems, and product engineering: retrieval pipelines, asynchronous workers, protocol gateways, APIs, databases, and deployed interfaces.
+I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My strongest work now spans distributed transactions, storage and networking, resilient gateways, data platforms, and applied retrieval systems—built in C++, Java, Go, and Python.
 
-I tend to work across the full path: ingest and normalize data, design the database and API boundary, add retrieval or ML where it earns its place, then test and measure the behavior. I am looking for 2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships where that systems-to-product range is useful.
+The common thread is proof: make state and failure boundaries explicit, test the guarantees against real infrastructure, then measure before making a performance claim. I am looking for 2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships where that depth and range are useful.
 
 <table>
   <tr>
-    <th align="left">AI / ML SOFTWARE</th>
+    <th align="left">SYSTEMS</th>
     <th align="left">PLATFORM / CLOUD</th>
-    <th align="left">GENERAL SOFTWARE</th>
+    <th align="left">AI / DATA</th>
   </tr>
   <tr>
-    <td>Retrieval, embeddings, clustering, RAG, and evaluation harnesses</td>
-    <td>APIs, gateways, workers, data stores, containers, CI, metrics, and deployment</td>
-    <td>Authentication, relational models, frontend workflows, and shipped products</td>
+    <td>TCP protocols, concurrent servers, persistence, crash recovery</td>
+    <td>Distributed services, Kafka workflows, containers, observability, IaC exercises</td>
+    <td>Hybrid retrieval, embeddings, RAG, evaluation, inference performance</td>
   </tr>
 </table>
 
@@ -37,55 +37,84 @@ I tend to work across the full path: ingest and normalize data, design the datab
 
 ## 02 / SELECTED SYSTEMS
 
-### 01 · [TalentScope](https://github.com/meetsutariya4448/talentscope)
+### 01 · [EventForge](https://github.com/meetsutariya4448/EventForge)
 
-#### Job-market intelligence from scheduled ingestion to hybrid retrieval.
+#### Distributed transactions with failure semantics made explicit.
 
-Celery workers ingest postings from Greenhouse, Lever, and Adzuna, normalize and deduplicate them, and persist searchable records in PostgreSQL. A FastAPI layer combines GIN full-text search with pgvector HNSW retrieval through Reciprocal Rank Fusion; Redis-backed RAG Q&A and scheduled KMeans role clustering sit on the same data path.
+Four Spring Boot services own separate PostgreSQL databases and coordinate through Kafka. Transactional outboxes remove the database/broker dual write; idempotent consumers absorb redelivery; a persisted saga compensates partial failure; trace context continues across HTTP, outbox relay, and asynchronous consumers.
 
-`Python · FastAPI · PostgreSQL · pgvector · Celery · Redis · scikit-learn · Docker`
+`Java 21 · Spring Boot · Kafka · PostgreSQL · Testcontainers · OpenTelemetry · Flyway · TypeScript`
 
-**Role signal:** Platform/cloud SWE · backend engineering · data systems · applied AI/ML
+**Role signal:** Platform/cloud SWE · backend engineering · distributed systems · Java SWE
 
-**Engineering signal:** 1,530-posting measured corpus · hybrid search p95 **39.2 ms** across 600 local samples · **54 tests passing** in GitHub Actions.  
-[Repository →](https://github.com/meetsutariya4448/talentscope) · [CI →](https://github.com/meetsutariya4448/talentscope/actions/runs/30116435731) · [Benchmark →](https://github.com/meetsutariya4448/talentscope/blob/main/evals/benchmark.json)
+**Engineering evidence:** **89 tests** against real PostgreSQL and Kafka · fault injection at commit/ack boundaries · six-job CI green on the current commit · **22 ADRs** documenting system decisions and limits.
+
+[Repository →](https://github.com/meetsutariya4448/EventForge) · [Architecture →](https://github.com/meetsutariya4448/EventForge/blob/main/docs/architecture.md) · [CI →](https://github.com/meetsutariya4448/EventForge/actions/runs/34058193491)
 
 <br>
 
-### 02 · [Portcullis](https://github.com/meetsutariya4448/portcullis)
+### 02 · [ForgeKV](https://github.com/meetsutariya4448/ForgeKV)
 
-#### A stateless protocol gateway with a separately evaluated security control plane.
+#### A persistent key-value server built below the framework line.
 
-The Go data plane validates MCP headers against JSON-RPC bodies, routes namespaced tools, and bridges legacy upstreams through bounded session pools and a sliding-window circuit breaker. The Python control plane evaluates a three-stage tool-poisoning detector—rules, local embedding similarity, then an LLM classifier with literal evidence-span validation.
+A versioned binary protocol feeds a bounded TCP server and sharded in-memory index backed by checksummed, append-only segments. The engine handles TTL expiry, compaction, truncated-tail recovery, corruption detection, and process-level ownership of the data directory.
 
-`Go · Python · net/http · Prometheus · sentence-transformers · pgvector · Docker`
+`C++20 · CMake · GoogleTest · TCP · Threads · Sanitizers · libFuzzer · GitHub Actions`
+
+**Role signal:** General SWE · systems engineering · C++ SWE · storage and performance
+
+**Engineering evidence:** **130 tests** passed in each latest Release and sanitizer configuration · two parser fuzzers completed **10,000 runs each** · a focused TCP fix reduced median p99 batch latency from **49.2 ms to 0.99 ms** under the documented loopback benchmark.
+
+[Repository →](https://github.com/meetsutariya4448/ForgeKV) · [Storage format →](https://github.com/meetsutariya4448/ForgeKV/blob/main/docs/STORAGE_FORMAT.md) · [CI →](https://github.com/meetsutariya4448/ForgeKV/actions/runs/34140977502)
+
+<br>
+
+### 03 · [TalentScope](https://github.com/meetsutariya4448/talentscope)
+
+#### A distributed search and retrieval service measured under a fixed CPU budget.
+
+Celery workers ingest and embed job postings into PostgreSQL; FastAPI combines GIN full-text search with pgvector HNSW retrieval through Reciprocal Rank Fusion. Redis coordinates queues, in-flight claims, answer caching, and spend controls, while readiness gates model-backed routes until the per-process encoder is warm.
+
+`Python · FastAPI · PostgreSQL · pgvector · Celery · Redis · sentence-transformers · Docker`
+
+**Role signal:** AI/ML SWE · platform/cloud SWE · backend engineering · data systems
+
+**Engineering evidence:** **171 hosted-CI tests** · fixed-2-CPU A/B testing improved successful throughput from **20.7 to 100.1 req/s** and reduced p95 latency from **9,239 to 665 ms** across ten alternating trials · Kubernetes and Terraform are exercised locally with kind and LocalStack, not claimed as a production cloud deployment.
+
+[Repository →](https://github.com/meetsutariya4448/talentscope) · [Measurement →](https://github.com/meetsutariya4448/talentscope/blob/main/evals/thread-ab.md) · [CI →](https://github.com/meetsutariya4448/talentscope/actions/runs/34140832321)
+
+<br>
+
+### 04 · [Portcullis](https://github.com/meetsutariya4448/portcullis)
+
+#### A resilient MCP gateway with an independently evaluated security control plane.
+
+The Go data plane handles protocol validation, legacy translation, safe retries, circuit breaking, bulkheads, backpressure, multi-tenant policy, SSE streaming, failover, metrics, and distributed tracing. A separate Python cascade evaluates tool-poisoning descriptions; its verdict is intentionally not presented as live enforcement.
+
+`Go · Python · net/http · OpenTelemetry · Prometheus · sentence-transformers · Docker`
 
 **Role signal:** Platform SWE · backend engineering · AI infrastructure · security engineering
 
-**Engineering signal:** sourced 139-row scanner corpus · cascade F1 **0.973** under leave-one-out evaluation, with the stricter family-holdout limitation reported alongside it · measured native gateway p50 overhead **+1.30 ms** on the documented local benchmark. The scanner is not yet wired into live gateway enforcement.  
-[Repository →](https://github.com/meetsutariya4448/portcullis) · [Architecture →](https://github.com/meetsutariya4448/portcullis/blob/main/ARCHITECTURE.md) · [Evaluation →](https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md)
+**Engineering evidence:** native-path added p50 **+0.80 ms** in the documented local benchmark · circuit breaker opened and recovered in **6 seconds** around a real upstream stop/restart · scanner cascade F1 **0.973** under leave-one-out evaluation, with the stricter family-holdout limitation reported alongside it.
 
-<br>
+[Repository →](https://github.com/meetsutariya4448/portcullis) · [Architecture →](https://github.com/meetsutariya4448/portcullis/blob/main/ARCHITECTURE.md) · [Results →](https://github.com/meetsutariya4448/portcullis/blob/main/bench/results.md)
 
-### 03 · [FitForge](https://github.com/meetsutariya4448/fitforge)
+### Project index
 
-#### A deployed fitness product with an evaluated retrieval path.
-
-FitForge pairs a React client with a FastAPI/PostgreSQL backend for JWT-authenticated plan generation, workout-session logging, personal-record updates, and progress visualization. Its planning path retrieves fitness guidance with sparse + dense search and cross-encoder reranking before grounded generation through Groq.
-
-`Python · FastAPI · PostgreSQL · React · Recharts · sentence-transformers · Groq · Docker`
-
-**Role signal:** General SWE · AI/ML SWE · full-stack product engineering
-
-**Engineering signal:** working public deployment · Alembic-managed relational model · 30-query retrieval ablation where hybrid search reached **R@5 0.900**, with dataset bias and generation-judge limits documented in the repository.  
-[Live demo →](https://fitforge-six.vercel.app) · [Repository →](https://github.com/meetsutariya4448/fitforge) · [RAG evaluation →](https://github.com/meetsutariya4448/fitforge/blob/main/backend/eval/results.md)
+| # | Project | What it demonstrates |
+|---:|---|---|
+| 01 | [EventForge](https://github.com/meetsutariya4448/EventForge) | Distributed transactions, failure recovery, Kafka, observability |
+| 02 | [ForgeKV](https://github.com/meetsutariya4448/ForgeKV) | C++ systems, TCP, concurrency, storage, profiling |
+| 03 | [TalentScope](https://github.com/meetsutariya4448/talentscope) | Data pipelines, hybrid retrieval, resource-aware inference |
+| 04 | [Portcullis](https://github.com/meetsutariya4448/portcullis) | Go gateway engineering, resilience, protocol security |
+| 05 | [FitForge](https://github.com/meetsutariya4448/fitforge) | Deployed full-stack product, auth, relational data, evaluated RAG |
 
 ---
 
 ## 03 / ENGINEERING TOOLKIT
 
 <p align="center">
-  <img src="./assets/toolkit-panel.svg" width="100%" alt="Verified engineering toolkit: Python, Go, FastAPI, PostgreSQL, pgvector, Celery, Redis, Docker, React, and supporting technologies" />
+  <img src="./assets/toolkit-panel.svg" width="100%" alt="Verified toolkit across systems, platforms, AI and data, operations, and validation" />
 </p>
 
 ---
@@ -93,32 +122,34 @@ FitForge pairs a React client with a FastAPI/PostgreSQL backend for JWT-authenti
 ## 04 / ENGINEERING EVIDENCE
 
 <p align="center">
-  <img src="./assets/evidence-panel.svg" width="100%" alt="Verified GitHub activity, public language composition, and project-specific engineering evidence" />
+  <img src="./assets/evidence-panel.svg" width="100%" alt="Project-specific test, fault-injection, fuzzing, and benchmark evidence" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/meetsutariya4448/talentscope/actions/runs/30116435731"><strong>TalentScope CI</strong></a>
+  <a href="https://github.com/meetsutariya4448/EventForge/actions/runs/34058193491"><strong>EventForge CI</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/meetsutariya4448/ForgeKV/actions/runs/34140977502"><strong>ForgeKV CI</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/meetsutariya4448/talentscope/actions/runs/34140832321"><strong>TalentScope CI</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md"><strong>Portcullis evaluation</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/meetsutariya4448/fitforge/blob/main/backend/eval/results.md"><strong>FitForge RAG evaluation</strong></a>
 </p>
 
-Activity provides context; project-specific tests, evaluations, and benchmarks remain the stronger signal.
+The numbers above are repository-specific and methodology-linked. Local benchmarks are not presented as production capacity, and local kind/LocalStack exercises are not presented as a cloud deployment.
 
 ---
 
 ## 05 / CURRENT WORKING SET
 
-- **Portcullis:** the explicit next boundary is scanner-to-gateway integration and a real allow/block/log policy layer.
-- **FitForge:** the latest work adds the hybrid RAG path and examines where onboarding-derived queries diverge from user intent.
-- **TalentScope:** recent hardening made clustering deterministic and benchmark artifacts traceable to a single source of truth.
+- **ForgeKV:** hardening protocol and network failure diagnostics while keeping benchmark output reproducible.
+- **TalentScope:** operating the retrieval service under explicit CPU, readiness, recovery, spend, and infrastructure constraints.
+- **EventForge:** consolidating transaction, replay, audit, and trace guarantees around executable failure-path tests.
 
 ---
 
 ## 06 / CONTACT
 
-If the work involves APIs, data movement, retrieval, platform services, or the path from model output to a reliable product, I would like to hear about it. I am open to relevant **2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships**.
+I am interested in teams that care about system boundaries, measurable behavior, and software that survives more than the happy path. I am open to relevant **2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships**.
 
 <p align="center">
   <a href="https://github.com/meetsutariya4448"><strong>GitHub</strong></a>

@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 590" role="img" aria-labelledby="title desc">
   <title id="title">Meet Sutariya engineering toolkit</title>
-  <desc id="desc">A layered toolkit showing verified languages, backend, AI and data, storage, delivery, and product technologies.</desc>
+  <desc id="desc">Technologies verified across public systems, platform, AI, data, operations, and validation work.</desc>
 
-  <rect width="720" height="560" rx="18" fill="#0b1016"/>
-  <path d="M24 24H84M24 24V54M696 24H636M696 24V54M24 536H84M24 536V506M696 536H636M696 536V506" fill="none" stroke="#75e6c5" stroke-width="2"/>
+  <rect width="720" height="590" rx="18" fill="#0b1016"/>
+  <path d="M24 24H84M24 24V54M696 24H636M696 24V54M24 566H84M24 566V536M696 566H636M696 566V536" fill="none" stroke="#75e6c5" stroke-width="2"/>
 
   <text x="42" y="51" fill="#8293a4" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.6">03 / ENGINEERING TOOLKIT</text>
   <circle cx="674" cy="43" r="5" fill="#75e6c5"/>
@@ -11,29 +11,29 @@
   <g font-family="Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
     <rect x="30" y="76" width="660" height="42" rx="5" fill="#111a23" stroke="#314252"/>
     <text x="48" y="102" fill="#f5f7fa" font-size="16" font-weight="700">LAYER</text>
-    <text x="194" y="102" fill="#f5f7fa" font-size="16" font-weight="700">TOOLS PROVEN IN PUBLIC PROJECTS</text>
+    <text x="182" y="102" fill="#f5f7fa" font-size="16" font-weight="700">TOOLS PROVEN IN PUBLIC PROJECTS</text>
 
-    <g font-size="15.5">
-      <path d="M176 76V370" stroke="#314252"/>
+    <g font-size="14">
+      <path d="M164 76V370" stroke="#314252"/>
       <path d="M30 118H690M30 160H690M30 202H690M30 244H690M30 286H690M30 328H690M30 370H690" stroke="#314252"/>
 
       <text x="48" y="145" fill="#dce5ec" font-weight="650">Languages</text>
-      <text x="194" y="145" fill="#c4d0da">Python · Go · JavaScript · SQL</text>
+      <text x="182" y="145" fill="#c4d0da">C++20 · Java 21 · Python · Go · TypeScript / JavaScript · SQL</text>
 
-      <text x="48" y="187" fill="#dce5ec" font-weight="650">Backend</text>
-      <text x="194" y="187" fill="#c4d0da">FastAPI · SQLAlchemy · Celery · Go net/http</text>
+      <text x="48" y="187" fill="#dce5ec" font-weight="650">Systems</text>
+      <text x="182" y="187" fill="#c4d0da">TCP · binary protocols · concurrency · append-only storage</text>
 
-      <text x="48" y="229" fill="#dce5ec" font-weight="650">AI / Data</text>
-      <text x="194" y="229" fill="#c4d0da">pgvector · sentence-transformers · scikit-learn · RAG</text>
+      <text x="48" y="229" fill="#dce5ec" font-weight="650">Platform</text>
+      <text x="182" y="229" fill="#c4d0da">Spring Boot · Kafka · FastAPI · Celery · Redis</text>
 
-      <text x="48" y="271" fill="#dce5ec" font-weight="650">Data plane</text>
-      <text x="194" y="271" fill="#c4d0da">PostgreSQL · Redis · Alembic · HNSW / GIN</text>
+      <text x="48" y="271" fill="#dce5ec" font-weight="650">AI / Data</text>
+      <text x="182" y="271" fill="#c4d0da">PostgreSQL · pgvector · sentence-transformers · RAG · scikit-learn</text>
 
-      <text x="48" y="313" fill="#dce5ec" font-weight="650">Platform</text>
-      <text x="194" y="313" fill="#c4d0da">Docker Compose · GitHub Actions · Prometheus · Vercel / Render</text>
+      <text x="48" y="313" fill="#dce5ec" font-weight="650">Operations</text>
+      <text x="182" y="313" fill="#c4d0da">Docker · Kubernetes (kind) · Terraform (LocalStack) · Prometheus</text>
 
-      <text x="48" y="355" fill="#dce5ec" font-weight="650">Product UI</text>
-      <text x="194" y="355" fill="#c4d0da">React · Tailwind CSS · Chart.js · Recharts</text>
+      <text x="48" y="355" fill="#dce5ec" font-weight="650">Validation</text>
+      <text x="182" y="355" fill="#c4d0da">Testcontainers · GoogleTest · pytest · sanitizers · fuzzing · CI</text>
     </g>
   </g>
 
@@ -41,46 +41,46 @@
 
   <g font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" text-anchor="middle">
     <g transform="translate(38 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#3776ab" stroke-width="2"/>
-      <text x="36" y="39" fill="#ffd343" font-size="22" font-weight="700">PY</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">PYTHON</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#659ad2" stroke-width="2"/>
+      <text x="36" y="39" fill="#8fc3f4" font-size="20" font-weight="700">C++</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">C++20</text>
     </g>
     <g transform="translate(120 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#00add8" stroke-width="2"/>
-      <text x="36" y="39" fill="#6ad7ee" font-size="22" font-weight="700">GO</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">GOLANG</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#e76f00" stroke-width="2"/>
+      <text x="36" y="39" fill="#f59f55" font-size="20" font-weight="700">JV</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">JAVA 21</text>
     </g>
     <g transform="translate(202 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#4169e1" stroke-width="2"/>
-      <text x="36" y="39" fill="#8da7ff" font-size="20" font-weight="700">SQL</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">POSTGRES</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#00add8" stroke-width="2"/>
+      <text x="36" y="39" fill="#6ad7ee" font-size="20" font-weight="700">GO</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">GOLANG</text>
     </g>
     <g transform="translate(284 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#009688" stroke-width="2"/>
-      <text x="36" y="39" fill="#75e6c5" font-size="20" font-weight="700">API</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">FASTAPI</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#3776ab" stroke-width="2"/>
+      <text x="36" y="39" fill="#ffd343" font-size="20" font-weight="700">PY</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">PYTHON</text>
     </g>
     <g transform="translate(366 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#d8a34a" stroke-width="2"/>
-      <text x="36" y="39" fill="#f0bd66" font-size="22" font-weight="700">CE</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">CELERY</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#e65328" stroke-width="2"/>
+      <text x="36" y="39" fill="#ff8b66" font-size="20" font-weight="700">KF</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">KAFKA</text>
     </g>
     <g transform="translate(448 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#e5484d" stroke-width="2"/>
-      <text x="36" y="39" fill="#ff777b" font-size="22" font-weight="700">R</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">REDIS</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#4169e1" stroke-width="2"/>
+      <text x="36" y="39" fill="#8da7ff" font-size="20" font-weight="700">PG</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">POSTGRES</text>
     </g>
     <g transform="translate(530 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#2496ed" stroke-width="2"/>
-      <text x="36" y="39" fill="#67b8f2" font-size="22" font-weight="700">DK</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">DOCKER</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#2496ed" stroke-width="2"/>
+      <text x="36" y="39" fill="#67b8f2" font-size="20" font-weight="700">DK</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">DOCKER</text>
     </g>
     <g transform="translate(612 425)">
-      <rect width="72" height="76" rx="12" fill="#111a23" stroke="#61dafb" stroke-width="2"/>
-      <text x="36" y="39" fill="#8ae6ff" font-size="22" font-weight="700">RE</text>
-      <text x="36" y="61" fill="#8293a4" font-size="9">REACT</text>
+      <rect width="72" height="82" rx="12" fill="#111a23" stroke="#326ce5" stroke-width="2"/>
+      <text x="36" y="39" fill="#77a2ff" font-size="18" font-weight="700">K8S</text>
+      <text x="36" y="64" fill="#8293a4" font-size="9">KIND</text>
     </g>
   </g>
 
-  <text x="42" y="526" fill="#657788" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10">CURATED FROM IMPLEMENTED CODE · NO CLAIMED-ONLY TOOLS</text>
+  <text x="42" y="546" fill="#657788" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="10">CURATED FROM IMPLEMENTED CODE · LOCAL INFRA EXERCISES LABELED</text>
 </svg>
