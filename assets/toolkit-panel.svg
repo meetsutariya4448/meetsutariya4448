@@ -33,7 +33,7 @@
       <text x="182" y="313" fill="#c4d0da">Docker · Kubernetes (kind) · Terraform (LocalStack) · Prometheus</text>
 
       <text x="48" y="355" fill="#dce5ec" font-weight="650">Validation</text>
-      <text x="182" y="355" fill="#c4d0da">Testcontainers · GoogleTest · pytest · sanitizers · fuzzing · CI</text>
+      <text x="182" y="355" fill="#c4d0da">Testcontainers · GoogleTest · Playwright · sanitizers · fuzzing · CI</text>
     </g>
   </g>
 

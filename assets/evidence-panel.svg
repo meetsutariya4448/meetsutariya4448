@@ -50,16 +50,16 @@
     <rect x="30" y="501" width="320" height="108" rx="9" fill="#0e151d" stroke="#314252"/>
     <text x="50" y="532" fill="#75e6c5" font-size="11" font-weight="700" letter-spacing="1.4">PORTCULLIS / GATEWAY</text>
     <text x="50" y="566" fill="#f5f7fa" font-size="22" font-weight="750">+0.80 ms p50</text>
-    <text x="50" y="590" fill="#8293a4" font-size="11.5">native path · breaker recovery 6s</text>
+    <text x="50" y="590" fill="#8293a4" font-size="11.5">native path · leakage found, split rebuilt</text>
 
     <rect x="370" y="501" width="320" height="108" rx="9" fill="#0e151d" stroke="#314252"/>
-    <text x="390" y="532" fill="#75e6c5" font-size="11" font-weight="700" letter-spacing="1.4">FITFORGE / RETRIEVAL</text>
-    <text x="390" y="566" fill="#f5f7fa" font-size="22" font-weight="750">R@5 0.900</text>
-    <text x="390" y="590" fill="#8293a4" font-size="11.5">30-query ablation · live product</text>
+    <text x="390" y="532" fill="#75e6c5" font-size="11" font-weight="700" letter-spacing="1.4">FITFORGE / CI</text>
+    <text x="390" y="566" fill="#f5f7fa" font-size="22" font-weight="750">5 green jobs</text>
+    <text x="390" y="590" fill="#8293a4" font-size="11.5">113 backend · 25 component · 17 browser</text>
 
     <rect x="30" y="627" width="660" height="42" rx="7" fill="#13221f" stroke="#2e6d5c"/>
     <text x="360" y="653" text-anchor="middle" fill="#75e6c5" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5">FAILURE TESTS · RAW ARTIFACTS · LIMITS REPORTED</text>
   </g>
 
-  <text x="42" y="687" fill="#657788" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5">SNAPSHOT 2026-09-07 · PROJECT CI, EVALS, BENCHMARKS, AND PUBLIC CODE</text>
+  <text x="42" y="687" fill="#657788" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="9.5">SNAPSHOT 2026-09-15 · PROJECT CI, EVALS, BENCHMARKS, AND PUBLIC CODE</text>
 </svg>

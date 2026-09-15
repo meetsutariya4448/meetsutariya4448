@@ -9,14 +9,14 @@
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="mailto:meetsutariya5930@gmail.com"><strong>Email</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://fitforge-six.vercel.app"><strong>Live product</strong></a>
+  <a href="https://github.com/meetsutariya4448/fitforge"><strong>FitForge</strong></a>
 </p>
 
 ---
 
 ## 01 / ENGINEERING PROFILE
 
-I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My strongest work now spans distributed transactions, storage and networking, resilient gateways, data platforms, and applied retrieval systems—built in C++, Java, Go, and Python.
+I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My strongest work spans distributed transactions, storage and networking, resilient gateways, data platforms, applied retrieval, and full-stack product engineering—built in C++, Java, Go, Python, and TypeScript.
 
 The common thread is proof: make state and failure boundaries explicit, test the guarantees against real infrastructure, then measure before making a performance claim. I am looking for 2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships where that depth and range are useful.
 
@@ -87,17 +87,33 @@ Celery workers ingest and embed job postings into PostgreSQL; FastAPI combines G
 
 ### 04 · [Portcullis](https://github.com/meetsutariya4448/portcullis)
 
-#### A resilient MCP gateway with an independently evaluated security control plane.
+#### A resilient MCP gateway with content-bound admission enforcement.
 
-The Go data plane handles protocol validation, legacy translation, safe retries, circuit breaking, bulkheads, backpressure, multi-tenant policy, SSE streaming, failover, metrics, and distributed tracing. A separate Python cascade evaluates tool-poisoning descriptions; its verdict is intentionally not presented as live enforcement.
+The Go data plane handles protocol validation, legacy translation, safe retries, circuit breaking, bulkheads, backpressure, multi-tenant policy, SSE streaming, failover, metrics, and tracing. Its admission gate reads content-hashed verdicts from PostgreSQL before routing; an out-of-band Python worker scans newly discovered tool descriptions without placing a multi-second classifier on the request path.
 
-`Go · Python · net/http · OpenTelemetry · Prometheus · sentence-transformers · Docker`
+`Go · Python · PostgreSQL · net/http · OpenTelemetry · Prometheus · sentence-transformers · Docker`
 
 **Role signal:** Platform SWE · backend engineering · AI infrastructure · security engineering
 
-**Engineering evidence:** native-path added p50 **+0.80 ms** in the documented local benchmark · circuit breaker opened and recovered in **6 seconds** around a real upstream stop/restart · scanner cascade F1 **0.973** under leave-one-out evaluation, with the stricter family-holdout limitation reported alongside it.
+**Engineering evidence:** native-path added p50 **+0.80 ms** in the documented local benchmark · circuit breaker opened and recovered in **6 seconds** around a real upstream stop/restart · an audit found that the earlier scanner headline depended on near-duplicate family leakage, so the split was rebuilt around held-out families, runs are now fingerprinted, and cascade quality is no longer reported without a complete revised run.
 
 [Repository →](https://github.com/meetsutariya4448/portcullis) · [Architecture →](https://github.com/meetsutariya4448/portcullis/blob/main/ARCHITECTURE.md) · [Results →](https://github.com/meetsutariya4448/portcullis/blob/main/bench/results.md)
+
+<br>
+
+### 05 · [FitForge](https://github.com/meetsutariya4448/fitforge)
+
+#### A full-stack fitness product with concurrency-safe authentication and a typed API boundary.
+
+The React/TypeScript client builds and tracks workout plans through a FastAPI/PostgreSQL backend. Refresh-token redemption is a single conditional database update so concurrent tabs produce one winner; zod validates responses at runtime, and CI checks those schemas against the backend's generated OpenAPI contract. Plan generation retrieves from a ten-document knowledge base with BM25 + vector search fused by RRF; logged workout history is not part of generation.
+
+`TypeScript · React · FastAPI · PostgreSQL · pgvector · SQLAlchemy · Alembic · zod · Playwright · pytest`
+
+**Role signal:** General SWE · full-stack engineering · backend engineering · applied AI
+
+**Engineering evidence:** five green CI jobs on the current commit · **113 backend tests** including real-PostgreSQL integration and eight-thread refresh redemption · **25 component tests** · **17 browser tests** · screenshots and limitations are documented; the hosted demo predates the current build, so local setup is the supported path.
+
+[Repository →](https://github.com/meetsutariya4448/fitforge) · [CI →](https://github.com/meetsutariya4448/fitforge/actions/runs/34169904811) · [Architecture →](https://github.com/meetsutariya4448/fitforge#how-it-works)
 
 ### Project index
 
@@ -107,7 +123,7 @@ The Go data plane handles protocol validation, legacy translation, safe retries,
 | 02 | [ForgeKV](https://github.com/meetsutariya4448/ForgeKV) | C++ systems, TCP, concurrency, storage, profiling |
 | 03 | [TalentScope](https://github.com/meetsutariya4448/talentscope) | Data pipelines, hybrid retrieval, resource-aware inference |
 | 04 | [Portcullis](https://github.com/meetsutariya4448/portcullis) | Go gateway engineering, resilience, protocol security |
-| 05 | [FitForge](https://github.com/meetsutariya4448/fitforge) | Deployed full-stack product, auth, relational data, evaluated RAG |
+| 05 | [FitForge](https://github.com/meetsutariya4448/fitforge) | Atomic token rotation, typed API contracts, product workflows, CI |
 
 ---
 
@@ -132,6 +148,8 @@ The Go data plane handles protocol validation, legacy translation, safe retries,
   &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://github.com/meetsutariya4448/talentscope/actions/runs/34140832321"><strong>TalentScope CI</strong></a>
   &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://github.com/meetsutariya4448/fitforge/actions/runs/34169904811"><strong>FitForge CI</strong></a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
   <a href="https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md"><strong>Portcullis evaluation</strong></a>
 </p>
 
@@ -141,9 +159,9 @@ The numbers above are repository-specific and methodology-linked. Local benchmar
 
 ## 05 / CURRENT WORKING SET
 
-- **ForgeKV:** hardening protocol and network failure diagnostics while keeping benchmark output reproducible.
+- **Portcullis:** enforcing content-bound scanner verdicts while keeping evaluation splits leakage-resistant and reproducible.
+- **FitForge:** tightening authentication races, runtime response validation, browser behavior, and frontend/backend contract checks.
 - **TalentScope:** operating the retrieval service under explicit CPU, readiness, recovery, spend, and infrastructure constraints.
-- **EventForge:** consolidating transaction, replay, audit, and trace guarantees around executable failure-path tests.
 
 ---
 
