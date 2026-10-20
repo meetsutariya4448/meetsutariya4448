@@ -1,178 +1,112 @@
-<p align="center">
-  <img src="./assets/profile-hero.svg" width="100%" alt="Meet Sutariya — distributed systems, platform engineering, and applied AI" />
+# Meet Sutariya
+
+**Software engineering · Backend & platform · AI / ML & data**
+
+Computer Science undergraduate, Data Science minor at **Arizona State University · 2027**.
+I build backend systems, AI applications, and data studies—with tests for how they fail and evidence for what they claim.
+
+[Portfolio](https://meet-sutariya-portfolio.vercel.app) · [LinkedIn](https://www.linkedin.com/in/meetssutariya/) · [Email](mailto:meetsutariya5930@gmail.com)
+
+<p>
+  <img src="https://skillicons.dev/icons?i=python" width="32" height="32" alt="Python" />
+  <img src="https://skillicons.dev/icons?i=cpp" width="32" height="32" alt="C++" />
+  <img src="https://skillicons.dev/icons?i=java" width="32" height="32" alt="Java" />
+  <img src="https://skillicons.dev/icons?i=go" width="32" height="32" alt="Go" />
+  <img src="https://skillicons.dev/icons?i=ts" width="32" height="32" alt="TypeScript" />
+  <img src="https://skillicons.dev/icons?i=postgres" width="32" height="32" alt="PostgreSQL" />
+  <img src="https://skillicons.dev/icons?i=docker" width="32" height="32" alt="Docker" />
+  <img src="https://skillicons.dev/icons?i=pytorch" width="32" height="32" alt="PyTorch" />
 </p>
 
-<p align="center">
-  <a href="https://github.com/meetsutariya4448"><strong>GitHub</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/meetssutariya"><strong>LinkedIn</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="mailto:meetsutariya5930@gmail.com"><strong>Email</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/meetsutariya4448/fitforge"><strong>FitForge</strong></a>
-</p>
+## 01 / Systems & applications
 
----
+### [ForgeKV](https://github.com/meetsutariya4448/ForgeKV) — A database from the storage layer up
 
-## 01 / ENGINEERING PROFILE
+A C++ key-value server with TCP networking, concurrent requests, and persistent storage. Checksums, crash recovery, and compaction protect stored data; sanitizer and fuzz tests exercise the failure paths. The working server is single-node.
 
-I am a Computer Science + Data Science undergraduate at Arizona State University, graduating in 2027. My strongest work spans distributed transactions, storage and networking, resilient gateways, data platforms, applied retrieval, and full-stack product engineering—built in C++, Java, Go, Python, and TypeScript.
+**C++20 · CMake · GoogleTest** · [Architecture](https://github.com/meetsutariya4448/ForgeKV/blob/main/docs/ARCHITECTURE.md) · [Tests & CI](https://github.com/meetsutariya4448/ForgeKV/actions)
 
-The common thread is proof: make state and failure boundaries explicit, test the guarantees against real infrastructure, then measure before making a performance claim. I am looking for 2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships where that depth and range are useful.
+### [EventForge](https://github.com/meetsutariya4448/EventForge) — Orders that recover from partial failure
 
-<table>
-  <tr>
-    <th align="left">SYSTEMS</th>
-    <th align="left">PLATFORM / CLOUD</th>
-    <th align="left">AI / DATA</th>
-  </tr>
-  <tr>
-    <td>TCP protocols, concurrent servers, persistence, crash recovery</td>
-    <td>Distributed services, Kafka workflows, containers, observability, IaC exercises</td>
-    <td>Hybrid retrieval, embeddings, RAG, evaluation, inference performance</td>
-  </tr>
-</table>
+Four services coordinate orders, payments, inventory, and notifications through Kafka. Transactional outboxes prevent lost events, duplicate messages have no duplicate database effect, and failed workflows trigger compensating actions. Fault-injection tests use real PostgreSQL and Kafka.
 
----
+**Java · Spring Boot · Kafka · PostgreSQL** · [Architecture](https://github.com/meetsutariya4448/EventForge/blob/main/docs/architecture.md) · [Tests & CI](https://github.com/meetsutariya4448/EventForge/actions)
 
-## 02 / SELECTED SYSTEMS
+### [TalentScope](https://github.com/meetsutariya4448/talentscope) — Job search by keyword and meaning
 
-### 01 · [EventForge](https://github.com/meetsutariya4448/EventForge)
+Background workers collect and embed job postings. The API combines keyword and vector search, then answers questions with links to the retrieved postings. A controlled local benchmark traces slow inference to CPU thread oversubscription and measures the fix.
 
-#### Distributed transactions with failure semantics made explicit.
+**Python · FastAPI · Celery · Redis · PostgreSQL / pgvector** · [Benchmark & limits](https://github.com/meetsutariya4448/talentscope/blob/main/evals/thread-ab.md)
 
-Four Spring Boot services own separate PostgreSQL databases and coordinate through Kafka. Transactional outboxes remove the database/broker dual write; idempotent consumers absorb redelivery; a persisted saga compensates partial failure; trace context continues across HTTP, outbox relay, and asynchronous consumers.
+### [Portcullis](https://github.com/meetsutariya4448/portcullis) — One gateway for AI tool servers
 
-`Java 21 · Spring Boot · Kafka · PostgreSQL · Testcontainers · OpenTelemetry · Flyway · TypeScript`
+A Go gateway routes MCP requests with retries, circuit breakers, and admission checks. A separate Python worker scans tool descriptions before they reach a model. An evaluation audit identified family leakage; I revised the split and withdrew unsupported cascade-quality claims.
 
-**Role signal:** Platform/cloud SWE · backend engineering · distributed systems · Java SWE
+**Go · Python · PostgreSQL · OpenTelemetry · Prometheus** · [Architecture](https://github.com/meetsutariya4448/portcullis/blob/main/ARCHITECTURE.md) · [Evaluation & caveats](https://github.com/meetsutariya4448/portcullis/tree/main/control/evals)
 
-**Engineering evidence:** **89 tests** against real PostgreSQL and Kafka · fault injection at commit/ack boundaries · six-job CI green on the current commit · **22 ADRs** documenting system decisions and limits.
+### [FitForge](https://github.com/meetsutariya4448/fitforge) — Plan workouts, log sessions, track progress
 
-[Repository →](https://github.com/meetsutariya4448/EventForge) · [Architecture →](https://github.com/meetsutariya4448/EventForge/blob/main/docs/architecture.md) · [CI →](https://github.com/meetsutariya4448/EventForge/actions/runs/34058193491)
+A fitness app with reference-grounded workout generation and saved training history. The engineering work includes concurrency-safe refresh tokens, runtime API validation, and browser tests. Generation uses onboarding answers and reference documents, not logged workout history.
 
-<br>
+**TypeScript · React · FastAPI · PostgreSQL · Playwright** · [Screenshots & implementation](https://github.com/meetsutariya4448/fitforge#what-it-looks-like) · [Tests & CI](https://github.com/meetsutariya4448/fitforge/actions)
 
-### 02 · [ForgeKV](https://github.com/meetsutariya4448/ForgeKV)
+## 02 / Data, ML & evaluation
 
-#### A persistent key-value server built below the framework line.
+These projects ask a specific question, compare against baselines, and report uncertainty and limitations. They are retrospective studies—not live experiments or production ML deployments.
 
-A versioned binary protocol feeds a bounded TCP server and sharded in-memory index backed by checksummed, append-only segments. The engine handles TTL expiry, compaction, truncated-tail recovery, corruption detection, and process-level ownership of the data directory.
+### [GridWatch](https://github.com/meetsutariya4448/GridWatch) — Forecasting when the latest data is late
 
-`C++20 · CMake · GoogleTest · TCP · Threads · Sanitizers · libFuzzer · GitHub Actions`
+Forecasts electricity demand under an assumed 24-hour reporting delay. Compares LightGBM, Chronos-2, and simpler baselines, then checks prediction-interval coverage and where forecasts fail.
 
-**Role signal:** General SWE · systems engineering · C++ SWE · storage and performance
+**Python · LightGBM · Chronos-2 · MLflow** · [Results & reliability](https://github.com/meetsutariya4448/GridWatch/blob/main/reports/reliability_report.md)
 
-**Engineering evidence:** **130 tests** passed in each latest Release and sanitizer configuration · two parser fuzzers completed **10,000 runs each** · a focused TCP fix reduced median p99 batch latency from **49.2 ms to 0.99 ms** under the documented loopback benchmark.
+### [CivicLens](https://github.com/meetsutariya4448/CivicLens) — What NYC complaint records can tell us
 
-[Repository →](https://github.com/meetsutariya4448/ForgeKV) · [Storage format →](https://github.com/meetsutariya4448/ForgeKV/blob/main/docs/STORAGE_FORMAT.md) · [CI →](https://github.com/meetsutariya4448/ForgeKV/actions/runs/34140977502)
+Studies recorded closure times for heat and hot-water complaints using survival analysis. Validates data across DuckDB, local Spark, and Databricks Delta, with S3 transfer checks and a local Tableau dashboard. Recorded closure does not establish that a repair happened.
 
-<br>
+**SQL · Python · PySpark · Databricks / Delta · Tableau** · [Study & platform evidence](https://github.com/meetsutariya4448/CivicLens#what-ran-where)
 
-### 03 · [TalentScope](https://github.com/meetsutariya4448/talentscope)
+### [AuditBudget](https://github.com/meetsutariya4448/AuditBudget) — How much review does AI evaluation need?
 
-#### A distributed search and retrieval service measured under a fixed CPU budget.
+Replays limited review budgets using RAGTruth's existing human annotations. Tests whether model-assisted estimates improve precision while keeping uncertainty intervals reliable; reports the small-budget case that fails the coverage requirement.
 
-Celery workers ingest and embed job postings into PostgreSQL; FastAPI combines GIN full-text search with pgvector HNSW retrieval through Reciprocal Rank Fusion. Redis coordinates queues, in-flight claims, answer caching, and spend controls, while readiness gates model-backed routes until the per-process encoder is warm.
+**Python · scikit-learn · DuckDB · Statistical simulation** · [Findings & limitations](https://github.com/meetsutariya4448/AuditBudget/blob/main/reports/technical_report.md)
 
-`Python · FastAPI · PostgreSQL · pgvector · Celery · Redis · sentence-transformers · Docker`
+### [ExposureRank](https://github.com/meetsutariya4448/ExposureRank) — When offline recommendation rankings change
 
-**Role signal:** AI/ML SWE · platform/cloud SWE · backend engineering · data systems
+Trains recommendation baselines and PyTorch models, then tests how missing feedback and sampled candidates change model comparisons. Keeps those two effects separate and retains inconclusive results.
 
-**Engineering evidence:** **171 hosted-CI tests** · fixed-2-CPU A/B testing improved successful throughput from **20.7 to 100.1 req/s** and reduced p95 latency from **9,239 to 665 ms** across ten alternating trials · Kubernetes and Terraform are exercised locally with kind and LocalStack, not claimed as a production cloud deployment.
+**Python · PyTorch · NumPy · DuckDB** · [Evaluation report](https://github.com/meetsutariya4448/ExposureRank/blob/main/reports/technical_report.md)
 
-[Repository →](https://github.com/meetsutariya4448/talentscope) · [Measurement →](https://github.com/meetsutariya4448/talentscope/blob/main/evals/thread-ab.md) · [CI →](https://github.com/meetsutariya4448/talentscope/actions/runs/34140832321)
+### [CampaignLab](https://github.com/meetsutariya4448/CampaignLab) — Does learned targeting beat a simple campaign?
 
-<br>
+Analyzes a historical email experiment and evaluates a targeting policy on held-out data. The learned policy did not outperform sending the best campaign to everyone—a useful result against unnecessary personalization.
 
-### 04 · [Portcullis](https://github.com/meetsutariya4448/portcullis)
+**Python · scikit-learn · statsmodels · DuckDB** · [Decision memo](https://github.com/meetsutariya4448/CampaignLab/blob/main/reports/executive_memo.md)
 
-#### A resilient MCP gateway with content-bound admission enforcement.
+### [ExperimentGuard](https://github.com/meetsutariya4448/ExperimentGuard) — A/B-test decisions with evidence checks
 
-The Go data plane handles protocol validation, legacy translation, safe retries, circuit breaking, bulkheads, backpressure, multi-tenant policy, SSE streaming, failover, metrics, and tracing. Its admission gate reads content-hashed verdicts from PostgreSQL before routing; an out-of-band Python worker scans newly discovered tool descriptions without placing a multi-second classifier on the request path.
+Analyzes historical headline experiments with validity checks, multiple-comparison controls, and a frozen decision policy. A dashboard explains when the evidence supports a launch and when it is insufficient.
 
-`Go · Python · PostgreSQL · net/http · OpenTelemetry · Prometheus · sentence-transformers · Docker`
+**Python · DuckDB · dbt · SciPy · Streamlit** · [Dashboard](https://experiment-guard-chi.vercel.app) · [Decision rules](https://github.com/meetsutariya4448/ExperimentGuard#the-frozen-statistical-policy)
 
-**Role signal:** Platform SWE · backend engineering · AI infrastructure · security engineering
+## 03 / Toolkit
 
-**Engineering evidence:** native-path added p50 **+0.80 ms** in the documented local benchmark · circuit breaker opened and recovered in **6 seconds** around a real upstream stop/restart · an audit found that the earlier scanner headline depended on near-duplicate family leakage, so the split was rebuilt around held-out families, runs are now fingerprinted, and cascade quality is no longer reported without a complete revised run.
+| Area | Tools used in these projects |
+| :--- | :--- |
+| Languages | Python, C++, Java, Go, TypeScript, SQL |
+| Backend | FastAPI, Spring Boot, Kafka, Celery, Redis |
+| AI & ML | PyTorch, scikit-learn, LightGBM, embeddings, hybrid retrieval |
+| Data | PostgreSQL / pgvector, DuckDB, dbt, PySpark, Databricks / Delta |
+| Product | React, Next.js, Streamlit, Tableau |
+| Validation & operations | pytest, GoogleTest, Testcontainers, Playwright, Docker, GitHub Actions, OpenTelemetry |
 
-[Repository →](https://github.com/meetsutariya4448/portcullis) · [Architecture →](https://github.com/meetsutariya4448/portcullis/blob/main/ARCHITECTURE.md) · [Results →](https://github.com/meetsutariya4448/portcullis/blob/main/bench/results.md)
+## 04 / How I check my work
 
-<br>
+- **Test failures deliberately.** Crash recovery in ForgeKV, broker failures in EventForge, and concurrent token redemption in FitForge.
+- **Separate development from evaluation.** Locked splits, baseline comparisons, and reproducible reports in the data and ML studies.
+- **Keep claims within the evidence.** Local benchmarks stay local; historical findings stay historical; inconclusive and negative results stay in the reports.
 
-### 05 · [FitForge](https://github.com/meetsutariya4448/fitforge)
+Open to **2027 internships** in software, backend, platform/cloud, AI/ML, and data engineering.
 
-#### A full-stack fitness product with concurrency-safe authentication and a typed API boundary.
-
-The React/TypeScript client builds and tracks workout plans through a FastAPI/PostgreSQL backend. Refresh-token redemption is a single conditional database update so concurrent tabs produce one winner; zod validates responses at runtime, and CI checks those schemas against the backend's generated OpenAPI contract. Plan generation retrieves from a ten-document knowledge base with BM25 + vector search fused by RRF; logged workout history is not part of generation.
-
-`TypeScript · React · FastAPI · PostgreSQL · pgvector · SQLAlchemy · Alembic · zod · Playwright · pytest`
-
-**Role signal:** General SWE · full-stack engineering · backend engineering · applied AI
-
-**Engineering evidence:** five green CI jobs on the current commit · **113 backend tests** including real-PostgreSQL integration and eight-thread refresh redemption · **25 component tests** · **17 browser tests** · screenshots and limitations are documented; the hosted demo predates the current build, so local setup is the supported path.
-
-[Repository →](https://github.com/meetsutariya4448/fitforge) · [CI →](https://github.com/meetsutariya4448/fitforge/actions/runs/34169904811) · [Architecture →](https://github.com/meetsutariya4448/fitforge#how-it-works)
-
-### Project index
-
-| # | Project | What it demonstrates |
-|---:|---|---|
-| 01 | [EventForge](https://github.com/meetsutariya4448/EventForge) | Distributed transactions, failure recovery, Kafka, observability |
-| 02 | [ForgeKV](https://github.com/meetsutariya4448/ForgeKV) | C++ systems, TCP, concurrency, storage, profiling |
-| 03 | [TalentScope](https://github.com/meetsutariya4448/talentscope) | Data pipelines, hybrid retrieval, resource-aware inference |
-| 04 | [Portcullis](https://github.com/meetsutariya4448/portcullis) | Go gateway engineering, resilience, protocol security |
-| 05 | [FitForge](https://github.com/meetsutariya4448/fitforge) | Atomic token rotation, typed API contracts, product workflows, CI |
-
----
-
-## 03 / ENGINEERING TOOLKIT
-
-<p align="center">
-  <img src="./assets/toolkit-panel.svg" width="100%" alt="Verified toolkit across systems, platforms, AI and data, operations, and validation" />
-</p>
-
----
-
-## 04 / ENGINEERING EVIDENCE
-
-<p align="center">
-  <img src="./assets/evidence-panel.svg" width="100%" alt="Project-specific test, fault-injection, fuzzing, and benchmark evidence" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/meetsutariya4448/EventForge/actions/runs/34058193491"><strong>EventForge CI</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/meetsutariya4448/ForgeKV/actions/runs/34140977502"><strong>ForgeKV CI</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/meetsutariya4448/talentscope/actions/runs/34140832321"><strong>TalentScope CI</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/meetsutariya4448/fitforge/actions/runs/34169904811"><strong>FitForge CI</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://github.com/meetsutariya4448/portcullis/blob/main/control/evals/REPORT.md"><strong>Portcullis evaluation</strong></a>
-</p>
-
-The numbers above are repository-specific and methodology-linked. Local benchmarks are not presented as production capacity, and local kind/LocalStack exercises are not presented as a cloud deployment.
-
----
-
-## 05 / CURRENT WORKING SET
-
-- **Portcullis:** enforcing content-bound scanner verdicts while keeping evaluation splits leakage-resistant and reproducible.
-- **FitForge:** tightening authentication races, runtime response validation, browser behavior, and frontend/backend contract checks.
-- **TalentScope:** operating the retrieval service under explicit CPU, readiness, recovery, spend, and infrastructure constraints.
-
----
-
-## 06 / CONTACT
-
-I am interested in teams that care about system boundaries, measurable behavior, and software that survives more than the happy path. I am open to relevant **2027 AI/ML SWE, platform/cloud SWE, backend, and general software engineering internships**.
-
-<p align="center">
-  <a href="https://github.com/meetsutariya4448"><strong>GitHub</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/meetssutariya"><strong>LinkedIn</strong></a>
-  &nbsp;&nbsp;·&nbsp;&nbsp;
-  <a href="mailto:meetsutariya5930@gmail.com"><strong>meetsutariya5930@gmail.com</strong></a>
-</p>
+[Portfolio](https://meet-sutariya-portfolio.vercel.app) · [LinkedIn](https://www.linkedin.com/in/meetssutariya/) · [Email](mailto:meetsutariya5930@gmail.com)
